@@ -114,7 +114,6 @@ class UserLogin extends Component {
 
           <RaisedButton label="Submit" type="submit" backgroundColor={blue500} labelColor="white"/>
 
-          <Link to="/user/register"><FlatButton label="Register"/></Link>
         </form>
 
         <Snackbar

@@ -13,9 +13,6 @@ class About extends Component {
                            rel="noopener noreferrer">https://github.com/atulmy/node-express-react-redux-zwitter</a></p>
 
         <br/>
-
-        <p>Twitter: <a href="https://twitter.com/atulmy" target="_blank"
-                       rel="noopener noreferrer">https://twitter.com/atulmy</a></p>
       </section>
     )
   }

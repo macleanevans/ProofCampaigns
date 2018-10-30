@@ -7,6 +7,7 @@ import PropTypes from 'prop-types'
 import { fetchTweets } from '../../actions/tweet'
 import Loading from '../loading'
 import TweetList from './list'
+import AuthRedirect from '../user/auth-redirect';
 
 class TweetListContainer extends Component {
   componentDidMount () {
@@ -21,6 +22,9 @@ class TweetListContainer extends Component {
         <br/>
 
         {this.props.tweets.loading ? <Loading/> : <TweetList tweets={this.props.tweets.list}/>}
+
+        <AuthRedirect />
+        
       </section>
     )
   }

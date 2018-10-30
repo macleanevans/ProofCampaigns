@@ -10,6 +10,8 @@ const config = require('./../config')
 let authMiddleware = require('./middlewares/auth')
 let User = require('../models/user')
 
+
+
 // Common Routes
 let userRoutes = express.Router()
 
@@ -23,7 +25,6 @@ userRoutes.post('/login', authMiddleware, (request, response) => {
 
   if (request.body.username) {
     User.findOne({username: request.body.username}, (error, document) => {
-
       if (error) {
         responseData.errors.push({type: 'critical', message: error})
 

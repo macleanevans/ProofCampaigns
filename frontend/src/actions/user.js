@@ -1,22 +1,15 @@
 // Imports
 import jwtDecode from 'jwt-decode'
-
 // App Imports
 import config from '../config'
+//Util functions
+import Utils from '../utils';
 
 export const USER_CURRENT_SET = 'USER_CURRENT_SET'
 
 export function postLogin (credentials) {
   return dispatch => {
-    return fetch(`${ config.url.api }user/login`, {
-      method: 'post',
-
-      body: JSON.stringify(credentials),
-
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
+    return Utils.loginRequest(credentials)
       .then(response => {
         if (response.ok) {
           return response.json()
@@ -36,20 +29,6 @@ export function postLogin (credentials) {
   }
 }
 
-export function postRegister (credentials) {
-  return dispatch => {
-    return fetch(`${ config.url.api }user/register`, {
-      method: 'post',
-
-      body: JSON.stringify(credentials),
-
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-      .then(response => response.json())
-  }
-}
 
 export function setCurrentUser (user) {
   return {

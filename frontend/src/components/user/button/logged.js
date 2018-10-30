@@ -25,7 +25,6 @@ class UserButtonLogged extends Component {
 
   logout (event) {
     event.preventDefault()
-
     this.props.userLogout()
   }
 

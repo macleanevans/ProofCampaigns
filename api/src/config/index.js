@@ -4,7 +4,7 @@
 const config = {
   port: 5001,
   secret: 'super-secret-key',
-  databaseUrl: 'mongodb://localhost/Proof_Campaigns',
+  databaseUrl: 'mongodb://localhost:27017/Proof_Campaigns',
   saltRounds: 10
 }
 

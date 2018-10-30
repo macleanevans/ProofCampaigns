@@ -6,11 +6,11 @@ import PropTypes from 'prop-types'
 
 class AuthRedirect extends Component {
   render () {
-    const {isAuthenticated} = this.props.user
+    const {isAuthenticated} = this.props.user;
 
     return (
       <div>
-        {!isAuthenticated ? <Redirect to="/"/> : ''}
+        {!isAuthenticated ? <Redirect to="/login"/> : ''}
       </div>
     )
   }

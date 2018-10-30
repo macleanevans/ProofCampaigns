@@ -4,12 +4,24 @@
 const mongoose = require('mongoose')
 
 // User Collection
-let UserSchema = mongoose.Schema({
-  username: String,
-  password: String,
-  createdAt: Date
-})
+const UserSchema = new mongoose.Schema({
+  username: {
+    type: String,
+    required: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  geo: String, 
+  ip: String, 
+  industry: String, 
+  companySize: String, 
+  campaigns: Array
+});
 
-let User = mongoose.model('users', UserSchema)
+// const User = mongoose.model('Users', UserSchema, "Users")
+const User = mongoose.model("users", UserSchema, "users")
+
 
 module.exports = User
