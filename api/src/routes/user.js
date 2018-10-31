@@ -26,38 +26,35 @@ userRoutes.post('/login', authMiddleware, (request, response) => {
   if (request.body.username) {
     User.findOne({username: request.body.username}, (error, document) => {
       if (error) {
-        responseData.errors.push({type: 'critical', message: error})
-
-        response.json(responseData)
+        responseData.errors.push({type: 'critical', message: error});
+        response.json(responseData);
       } else {
         if (!document) {
-          responseData.errors.push({type: 'warning', message: 'No user exists with this username.'})
-
-          response.json(responseData)
+          responseData.errors.push({type: 'warning', message: 'No user exists with this username.'});
+          response.json(responseData);
         } else {
           bcrypt.compare(request.body.password, document.password, function (hashError, hashPasswordCheck) {
             if (!hashError) {
               if (hashPasswordCheck) {
+                //Set the jwt token
+                //Success Response
                 responseData.data.token = jwt.sign(document._doc, config.secret)
                 responseData.success = true
               } else {
                 responseData.errors.push({type: 'critical', message: 'The password is incorrect.'})
               }
-
               response.json(responseData)
             } else {
-              responseData.errors.push({type: 'critical', message: 'Please try again.'})
-
-              response.json(responseData)
+              responseData.errors.push({type: 'critical', message: 'Please try again.'});
+              response.json(responseData);
             }
           })
         }
       }
     })
   } else {
-    responseData.errors.push({type: 'critical', message: 'Username not provided.'})
-
-    response.json(responseData)
+    responseData.errors.push({type: 'critical', message: 'Username not provided.'});
+    response.json(responseData);
   }
 })
 

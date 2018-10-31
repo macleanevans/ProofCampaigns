@@ -16,3 +16,7 @@ section {
 h1, h2 {
   font-weight: normal;
 }
+
+.campaignCard {
+  margin-bottom: 25px
+}

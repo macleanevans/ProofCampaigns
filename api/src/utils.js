@@ -17,7 +17,11 @@ function checkStringRule(campaign, user, campaignList){
     const ruleObject = campaign["rule"];
     const keyLookup = ruleObject["key"];
     if(user[keyLookup].toLowerCase() === ruleObject["match"].toLowerCase()){
-        campaignList.push(campaign.name);
+        campaignList.push({
+            name: campaign.name, 
+            imageName: campaign.imageName, 
+            description: campaign.description
+        });
     }
     return campaignList;
 }
@@ -29,7 +33,11 @@ function checkRangeRule(campaign, user, campaignList){
         const userMin = user.companySize.split("-")[0];
         const userMax = user.companySize.split("-")[1];
         if(userMax === ruleObject.max && userMin === ruleObject.min){
-            campaignList.push(campaign.name)
+            campaignList.push({
+                name: campaign.name,
+                imageName: campaign.imageName, 
+                description: campaign.description
+            })
         }
     } else {
         //This is the case for 1000+

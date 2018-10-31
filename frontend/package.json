@@ -7,6 +7,7 @@
     "sw-precache": "^5.1.1"
   },
   "dependencies": {
+    "@material-ui/core": "^3.3.2",
     "classnames": "^2.2.5",
     "immutability-helper": "2.8.1",
     "jwt-decode": "^2.1.0",

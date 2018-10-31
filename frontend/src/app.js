@@ -4,10 +4,11 @@ import { Route, Switch } from 'react-router-dom'
 
 // App Imports
 import Layout from './components/layout'
-import TweetListContainer from './components/tweet/list-container'
+import TweetListContainer from './components/dashboard/list-container'
 import UserLogin from './components/user/login'
 import About from './components/about'
 import PageNotFound from './components/page-not-found'
+import CampaignList from './components/dashboard/list';
 
 const App = () => (
   <Layout>
