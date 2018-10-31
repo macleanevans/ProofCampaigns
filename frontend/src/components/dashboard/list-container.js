@@ -5,17 +5,17 @@ import PropTypes from 'prop-types'
 
 // App Imports
 import CampaignList from './list'
-import AuthRedirect from '../user/auth-redirect';
+import AuthRedirect from '../user/auth-redirect'
 
 class DashboardContainer extends Component {
   render () {
     return (
       <section>
-        <h2>Campaigns</h2>
-        
+        <h2 className="pageHeader">Campaigns</h2>
         <br/>
-        {/* TODO: Center this list */}
-        <CampaignList campaigns={this.props.user.campaigns} />
+        <div className="Aligner">
+          <CampaignList campaigns={this.props.user.campaigns} />
+        </div>
 
         <AuthRedirect />
         

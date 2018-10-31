@@ -20,3 +20,14 @@ h1, h2 {
 .campaignCard {
   margin-bottom: 25px
 }
+
+.Aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageHeader{
+  margin-left: 45px;
+}
+
