@@ -22,7 +22,7 @@ describe('Login Route', function(){
                 done();
             });
     });
-    it('Should send back message -- No user exists with this username -- when sent no username or password ', function (done) {
+    it('Should send back message -- The password is incorrect. -- when sent no username or password ', function (done) {
         chai.request(server)
             .post('/login')
             .send({username: "user_1", password: "wrong"})
