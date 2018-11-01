@@ -6,7 +6,7 @@
 - Nodemon
 - MongoDB
 
-## ▶️ Running
+## Running
 - Install NPM modules for **api** `cd api` and `npm install`
 - Install NPM modules for **frontend** `cd frontend` and `npm install`
 - Install Monogo on your local machine https://docs.mongodb.com/manual/installation/
@@ -21,7 +21,7 @@
 
 ## App Credentials 
 - All Users are registered as user_n based on their position in the CSV
-    -You can see the data that is populated in monog in `api/src/scripts/scriptConstants`
-- Password for all users is test
+    -You can see the data that is populated in monogo in `api/src/scripts/scriptConstants`
+- Password for all users is `test`
 
 
