@@ -15,7 +15,10 @@ function loginRequest(credentials){
 
 function updateUserRequest(user, newCampaignList){
     const token = localStorage.getItem('token')
-    const data = {user, newCampaignList}
+    const data = {
+        user: {username: user.username},
+        newCampaignList
+    };
     
     return fetch(`${config.url.api}updateCampaignList`, {
         method: 'put',
