@@ -14,7 +14,7 @@ function CampaignList({ campaigns, updateUser}) {
   const populateList = (campaigns) => {
     return campaigns.map((group, index) =>{
       return (
-        <div className="campaignCard">
+        <div className="campaignCard" key={group.name}>
           <CampaignCard 
             campaign={group}
             index={index}
