@@ -79,7 +79,7 @@ class CampaignCard extends Component {
 
 
   render() {
-    const { classes, campaign, index } = this.props;
+    const { classes, campaign, index, campaignList } = this.props;
     const { anchorEl, showMenu } = this.state;
     const imagePath = `/${campaign.imageName}`;
     const campaignName = campaign.name.charAt(0).toUpperCase() + campaign.name.slice(1);
@@ -106,10 +106,10 @@ class CampaignCard extends Component {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          {/* TODO: Add an on click that displays a dropdown? lets them choose what rank the card should be placed in */}
-          <Button size="small" color="primary" onClick={this.handleOpenPriorityList}>
-            Change Priority
-        </Button>
+          {campaignList.length > 1 ? 
+            <Button size="small" color="primary" onClick={this.handleOpenPriorityList}>Change Priority</Button> : 
+            null
+          }
           <Menu
             id="priorityMenu"
             anchorEl={anchorEl}
