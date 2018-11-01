@@ -1,6 +1,7 @@
 // Imports
 import isEmpty from 'lodash/isEmpty'
 
+
 // App Imports
 import { USER_CURRENT_SET } from '../actions/user'
 
@@ -16,7 +17,6 @@ export default (state = initialState, action = {}) => {
         isAuthenticated: !isEmpty(action.user),
         user: action.user
       }
-
     default:
       return state
   }

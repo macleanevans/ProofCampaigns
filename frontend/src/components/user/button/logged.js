@@ -1,6 +1,5 @@
 // Imports
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
@@ -16,14 +15,9 @@ import { userLogout } from '../../../actions/user'
 class UserButtonLogged extends Component {
   constructor () {
     super()
-
-    this.state = {
-      notification: false,
-      loggedOut: false
-    }
   }
 
-  logout (event) {
+  logout = (event) => {
     event.preventDefault()
     this.props.userLogout()
   }
@@ -37,8 +31,7 @@ class UserButtonLogged extends Component {
         targetOrigin={{horizontal: 'right', vertical: 'top'}}
         anchorOrigin={{horizontal: 'right', vertical: 'top'}}
       >
-        <Link to="/tweet/add"><MenuItem primaryText="Tweet"/></Link>
-        <MenuItem primaryText="Sign out" onClick={this.logout.bind(this)}/>
+        <MenuItem primaryText="Sign out" onClick={this.logout}/>
       </IconMenu>
     )
   }

@@ -31,7 +31,6 @@ class Layout extends Component {
         <AppBar
           title="Proof Homework"
           onLeftIconButtonClick={this.handleDrawerToggle}
-          //Todo: change this to Login log out based on auth
           iconElementRight={isAuthenticated ? <UserButtonLogged/> : <UserButtonLogin/>}
         />
 

@@ -1,7 +1,5 @@
 // Imports
 import jwtDecode from 'jwt-decode'
-// App Imports
-import config from '../config'
 //Util functions
 import Utils from '../utils';
 
@@ -18,9 +16,7 @@ export function postLogin (credentials) {
       .then(response => {
         if (response.success) {
           const token = response.data.token
-
           localStorage.setItem('token', token)
-
           dispatch(setCurrentUser(jwtDecode(token)))
         }
 
@@ -44,5 +40,25 @@ export function userLogout () {
     dispatch(setCurrentUser({}))
 
     return {success: true}
+  }
+}
+
+export function updateUserCampaignListOrder (user, newCampaignList) {
+  return dispatch => {
+    return Utils.updateUserRequest(user, newCampaignList)
+      .then(response => {
+        if (response.ok) {
+          return response.json()
+        }
+      })
+      .then(response => {
+        if (response.success) {
+          dispatch(setCurrentUser(response.data));
+          return { success: true }
+        }
+      })
+      .catch(error => {
+        console.log('Error in update user action --->', error);
+      })
   }
 }

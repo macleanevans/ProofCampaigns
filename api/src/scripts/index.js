@@ -3,7 +3,7 @@ const {campaignData, userData} = require('./scriptConstants');
 const Campaign = require('../models/campaign');
 const config = require('../config')
 const mongoose = require('mongoose')
-const {checkRule} = require('../utils');
+const {checkRule} = require('../utils').mappers;
 
 
 function initDb(){

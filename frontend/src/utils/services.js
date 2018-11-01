@@ -13,6 +13,21 @@ function loginRequest(credentials){
     });
 }
 
+function updateUserRequest(user, newCampaignList){
+    const token = localStorage.getItem('token')
+    const data = {user, newCampaignList}
+    
+    return fetch(`${config.url.api}updateCampaignList`, {
+        method: 'put',
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json',
+            'x-access-token': token
+        }
+    });
+}
+
 export default {
-    loginRequest
+    loginRequest, 
+    updateUserRequest
 }

@@ -9,8 +9,7 @@ class About extends Component {
 
         <br/>
 
-        <p>Github Repo: <a href="https://github.com/atulmy/node-express-react-redux-zwitter" target="_blank"
-                           rel="noopener noreferrer">https://github.com/atulmy/node-express-react-redux-zwitter</a></p>
+        <p>My attempt to land the job I've been searching for</p>
 
         <br/>
       </section>

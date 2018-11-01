@@ -5,18 +5,21 @@ import CampaignCard from './campaignCard';
 
 
 
-function CampaignList ({campaigns}) {
+function CampaignList({ campaigns, updateUser}) {
   const emptyList = (
-    <img src="/shrug.jpg"/>
+    <img alt="shrug" src="/shrug.jpg"/>
   );
 
   //Function instead of a const so this doesnt have to run if we dont have any campaigns 
-  const populateList = (campaigns, images) => {
-    return campaigns.map(group =>{
-      const path = `/${group.imageName}`;
+  const populateList = (campaigns) => {
+    return campaigns.map((group, index) =>{
       return (
         <div className="campaignCard">
-          <CampaignCard campaign={group} />
+          <CampaignCard 
+            campaign={group}
+            index={index}
+            campaignList={campaigns}
+            updateUser={updateUser} />
         </div>
       )
     });
@@ -24,13 +27,14 @@ function CampaignList ({campaigns}) {
 
   return (
     <div>
-      {campaigns.length === 0 ? emptyList : populateList(campaigns)}
+      {campaigns && campaigns.length === 0 ? emptyList : populateList(campaigns)}
     </div>
   )
 }
 
 CampaignList.propTypes = {
-  campaigns: PropTypes.array.isRequired
+  campaigns: PropTypes.array.isRequired, 
+  updateUser: PropTypes.func
 }
 
 export default CampaignList

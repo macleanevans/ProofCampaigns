@@ -1,13 +1,12 @@
 // Imports
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Link, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 // UI Imports
 import Snackbar from 'material-ui/Snackbar'
 import RaisedButton from 'material-ui/RaisedButton'
-import FlatButton from 'material-ui/FlatButton'
 import { blue500, red500 } from 'material-ui/styles/colors'
 import TextField from 'material-ui/TextField'
 import { Card, CardText } from 'material-ui/Card'
@@ -32,8 +31,6 @@ class UserLogin extends Component {
 
   onSubmit (event) {
     event.preventDefault()
-
-    console.log('E - submit #form-tweet')
 
     let input = {}
     input.username = this.state.username
